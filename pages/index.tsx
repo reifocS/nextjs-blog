@@ -21,6 +21,7 @@ export default function Home({
                 <title>{siteTitle}</title>
             </Head>
             <section className={utilStyles.headingMd}>
+                <p>Hi, I'm a computer science student, this is a very humble blog to help me improve my english and also to share some interesting content i learn about CS.</p>
             </section>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>

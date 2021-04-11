@@ -4,14 +4,16 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from "react";
+import next from 'next'
+import DarkModeToggle from './darkmode-toggle'
 
-const name = 'Vincent Reifocse'
-export const siteTitle = "Chanmax industries"
+const name = 'Le Doud'
+export const siteTitle = "Doud industries."
 
 export default function Layout({
-                                   children,
-                                   home
-                               }: {
+    children,
+    home
+}: {
     children: React.ReactNode
     home?: boolean
 }) {
@@ -20,7 +22,7 @@ export default function Layout({
             <Head>
                 <meta
                     name="description"
-                    content="Learn how to build a personal website using Next.js"
+                    content="Yet another CS blog."
                 />
                 <meta
                     property="og:image"
@@ -45,27 +47,28 @@ export default function Layout({
                         <h1 className={utilStyles.heading2Xl}>{name}</h1>
                     </>
                 ) : (
-                    <>
-                        <Link href="/">
-                            <a>
-                                <Image
-                                    priority
-                                    src="/images/profile.png"
-                                    className={utilStyles.borderCircle}
-                                    height={108}
-                                    width={108}
-                                    alt={name}
-                                />
-                            </a>
-                        </Link>
-                        <h2 className={utilStyles.headingLg}>
+                        <>
                             <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
+                                <a>
+                                    <Image
+                                        priority
+                                        src="/images/profile.png"
+                                        className={utilStyles.borderCircle}
+                                        height={108}
+                                        width={108}
+                                        alt={name}
+                                    />
+                                </a>
                             </Link>
-                        </h2>
-                    </>
-                )}
+                            <h2 className={utilStyles.headingLg}>
+                                <Link href="/">
+                                    <a className={utilStyles.colorInherit}>{name}</a>
+                                </Link>
+                            </h2>
+                        </>
+                    )}
             </header>
+            <DarkModeToggle/>
             <main>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
