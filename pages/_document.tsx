@@ -8,7 +8,7 @@ class MyDocument extends Document {
                   </Head>
             <body>
             <script dangerouslySetInnerHTML={{
-              __html: `
+              __html: `/*
               (function () {
                 var currentTheme;
               
@@ -30,7 +30,7 @@ class MyDocument extends Document {
                 }
               
                 function setCSSVar(property, color) {
-                  document.documentElement.style.setProperty(property, color);
+                  document.body.bgColor = "color";
                 }
                 try {
                   currentTheme = localStorage.getItem("theme") || "light";
@@ -47,7 +47,7 @@ class MyDocument extends Document {
                 } catch (err) {
                   console.log(new Error("accessing theme has been denied"));
                 }
-              })();
+              })();*/
             `,
             }}></script>
                 
