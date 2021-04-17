@@ -47,6 +47,10 @@ a:hover {
     text-decoration: underline;
 }
 
+small {
+    color: var(--font-color)
+}
+
 img {
     max-width: 100%;
     display: block;

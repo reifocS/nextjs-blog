@@ -7,6 +7,7 @@ import Date from '../components/date'
 import { GetStaticProps } from 'next'
 import React from 'react'
 import Tag from '../components/tag'
+import Tags from '../components/tags'
 
 export default function Home({
     allPostsData
@@ -17,7 +18,7 @@ export default function Home({
         id: string
         tags: string[]
     }[]
-}) {
+    }) {
     return (
         <Layout home>
             <Head>
@@ -34,8 +35,7 @@ export default function Home({
                             <Link href={`/posts/${id}`}>
                                 <a>{title}</a>
                             </Link>
-                            {/*{tags.map(t => <Tag key={t} tag={t}/>)}*/}
-                            <br />
+                            <Tags tags={tags}/>
                             <small className={utilStyles.lightText}>
                                 <Date dateString={date} />
                             </small>

@@ -5,10 +5,14 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from "react";
 import next from 'next'
-import DarkModeToggle from './darkmode-toggle'
+import dynamic from 'next/dynamic'
+
+const DarkModeToggle = dynamic(() => import('./darkmode-toggle'), {
+  ssr: false
+})
 
 const name = 'Le Doud'
-export const siteTitle = "Doud industries."
+export const siteTitle = "Le site du Doud."
 
 export default function Layout({
     children,
