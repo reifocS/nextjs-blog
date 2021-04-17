@@ -2,6 +2,7 @@
 title: 'Functionnal programming in typescript.'
 date: '2021-04-10'
 tags: ['functionnal programming', 'typescript']
+description: 'Presentation of functionnal programming patterns in typescript'
 ---
 
 
