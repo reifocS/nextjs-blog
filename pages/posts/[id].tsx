@@ -5,7 +5,7 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdownWithHtml from 'react-markdown'
 import CodeBlock from "../../components/codeblock"
 
 export default function Post({
@@ -28,7 +28,7 @@ export default function Post({
             <div className={utilStyles.lightText}>
                 <Date dateString={postData.date} />
             </div>
-                <ReactMarkdown source={postData.markdown}renderers={{ code: CodeBlock }} />
+                <ReactMarkdownWithHtml source={postData.markdown} allowDangerousHtml renderers={{ code: CodeBlock }} />
         </article>
     </Layout>
     )
@@ -44,6 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const postData = await getPostData(params.id as string)
+    console.log(postData)
     return {
         props: {
             postData
